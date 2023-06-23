@@ -230,13 +230,214 @@
 
 
 //passing function as an Argument
-let upperCase = function(str){
-    return str.toUpperCase();
+// let upperCase = function(str){
+//     return str.toUpperCase();
+// }
+// let lowerCase = function(str){
+//     return str.toLowerCase();
+// }
+// let transformer = function(str,fun){
+//     return fun(str);
+// }
+// console.log(transformer("hello",upperCase));
+
+
+
+
+//..............................setTimeout and setInterval............
+//setTimeOut ->Run Function "once" after "interval" of time
+//setInterval ->Run function repeatedly,starting after the 
+//interval of time,then repeating......
+//......................setTimeOut...........//setTimeOut(func|code , delay,arg1,arg2...)
+// function greeting(name){//creating function out side
+//     console.log(`welcome to our family ${name}`)
+// }
+// setTimeout(greeting,8000,"rinki")
+
+// setTimeout(function greet(name){//creating setTimeout 
+//     console.log(`welcome ${name}`)
+// },9000,"home");
+
+//...........................setInterval..........//setInterval(func|code , delay ,arg1,arg2...)
+// function greeting(name){//creating function out side
+//         console.log(`welcome to our family ${name}`)
+//  }
+//  setInterval(greeting,5000,"Kajol");
+
+
+
+
+
+
+
+//.......................Hoisting.................
+//variable "declaration" are "hoisted" toword top of their scope
+// function declaration
+//test()
+// function test(){
+//     console.log("hello world")
+// }
+
+//Not a function or arrow function
+// test()
+// let test = ()=>{
+//     console.log("hello")
+// }
+
+
+
+
+
+//.............................Arrow function.........................
+// let sum = function(a,b,c){
+//     return a+b+c;
+// }
+
+
+
+//............................callback function...............
+// var talk = function(fx){
+//     fx();
+// }
+// var sayHi = function(){
+//     console.log("hi");
+// }
+// talk(sayHi);
+
+
+//..................function returning function...............
+// function makeFunc(){
+//     const name = "Sunita";
+//     function displayName(){
+//         console.log(name);
+//     }
+//     return displayName;
+// }
+// const myFunc = makeFunc();
+// myFunc();
+
+
+
+
+//.......................IIFE-Immediately Invoked Function Expression...................
+// (function () {
+//    console.log("hiiiiiii");
+// })();
+
+
+
+
+//.................OBJECT IN JAVASCRIPT.....................
+// let car = {
+//     color:"blue",
+//     model:"2001",
+//     company:"Honda"
+// }
+//  console.log(car);
+// console.log(car.model);
+
+//..................delete properties of object...........
+// let obj =
+// {
+//     prop1:"value1",
+//     prop2:"value2"
+// }
+// console.log(obj);
+// delete obj.prop2;
+// console.log(obj);
+
+//..........................Function Vs Method...............
+//Method = are the properties(key) of object
+// let person = {
+//     agecalculate : function(birthYear){
+//     let age = 2023-birthYear;
+//     return age;
+//     }
+// }
+// console.log(person.agecalculate(2001));
+
+
+
+
+
+//.......................this keyword..........
+//in each method we have an access of special keyword called "this"
+//"this" keyword represent the object."calling" the
+//method in which "this" is "present"
+// let person = {
+//     firstName:"Sunita",
+//     lastName:"Patra",
+//     city:"Ambodala",
+//     birthyear:2001,
+//     education:"frontend developer",
+//     information:function(){
+//         return`${this.firstName} ${this.lastName} lives in ${this.city}`
+//     }
+// }
+// console.log(person.information());
+
+
+
+
+
+//.....................forEach method of array..........
+//it is another type of loop which we used to traverse
+//over the array
+//using for loop
+// let dishes = ["Biriyani","raita","mashroom","paneer"]
+// for(let i=0;i<dishes.length;i++){
+//     console.log(dishes[i])
+// }
+// console.log("********")
+// //using foreach method
+// dishes.forEach(function(element){
+//     console.log(element);
+// })
+//........................object inside array................
+//  let blockList = [{userName:"john",reason:"Abusive content"},{userName:"carry",reason:"copy write"}];
+//  console.log(blockList);
+
+
+
+
+
+//..................Math object........................
+//console.log(Math);//Math which return mathemetical operation value
+//let num = 2.845;
+// console.log(Math.round(num));// return to nearest integer
+// console.log(Math.floor(num));//round to down value
+// console.log(Math.ceil(num));//round to up
+// console.log(Math.trunc(num));//remove decimal part
+// let random = Math.random()
+// console.log(Math.round(random*100));
+
+
+
+//Function
+//call and apply method
+//we can manually set the value of "this" keyword using
+// mainPlane ={
+//     airline:"Fly india",
+//     iatcode:"FI",
+//     bookings:[],
+//     book:function(flightNum,name){
+//         console.log(`${name} booed flight on ${this.airline} with flight number ${this.iatcode}${flightNum}`);
+//         this.bookings.push({flightName:`${this.airline}`,name:name})
+//     }
+// }
+// mainPlane.book(566,"Sunita");
+// console.log(mainPlane);
+
+
+
+
+//..........................bind method..........................
+//this method is used to bind a function with obejct
+function greet(){
+    console.log(`Welcome ${this.firstName} ${this.lastName} on this`)
 }
-let lowerCase = function(str){
-    return str.toLowerCase();
+let user = {
+    firstName:"Sunita",
+    lastName:"Patra"
 }
-let transformer = function(str,fun){
-    return fun(str);
-}
-console.log(transformer("hello",upperCase));
+let greets = greet
